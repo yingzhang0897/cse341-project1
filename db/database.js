@@ -11,7 +11,7 @@ const initDb = (callback) => {
   }
   MongoClient.connect(process.env.MONGODB_URI)
     .then((client) => {
-      _db = client.db(); // Make sure to call `.db()` here
+      _db = client.db(); // Make sure to call `.db()` here, if not, it needs to be added in controllers.
       console.log('MongoDB connected!');
       callback(null, _db);
     })
